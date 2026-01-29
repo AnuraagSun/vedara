@@ -1,0 +1,24 @@
+# ==============================================================================
+# FILE: vedara/requirements-rpi.txt
+# PURPOSE: Raspberry Pi specific dependencies for Vedara AR System
+# TARGET: Raspberry Pi 4 Model B (4GB) - RPi OS Lite 64-bit
+# ==============================================================================
+
+# Operator, these are RPi-specific packages. Install AFTER base requirements.
+# Command: pip install -r requirements-rpi.txt --extra-index-url https://www.piwheels.org/simple
+
+# Picamera2 - Native RPi camera interface
+picamera2>=0.3.12
+
+# LibCamera Python bindings (usually comes with picamera2)
+# python3-libcamera
+
+# RPi-optimized OpenCV (from piwheels)
+opencv-python-headless>=4.8.0
+
+# TFLite runtime optimized for ARM64
+# Install via: pip install tflite-runtime --extra-index-url https://google-coral.github.io/py-repo/
+
+# ==============================================================================
+# END OF FILE: vedara/requirements-rpi.txt
+# ============================================================================== 

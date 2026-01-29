@@ -1,0 +1,129 @@
+platform: auto
+
+camera:
+
+  width: 640
+  height: 480
+
+  target_fps: 20
+
+  rpi: "picamera2"
+  windows: "opencv:0"
+
+  buffer_count: 4
+
+  auto_exposure: true
+  auto_wb: true
+
+inference:
+
+  model_file: "yolov5n_int8.tflite"
+
+  input_width: 320
+  input_height: 320
+
+  confidence_threshold: 0.45
+  nms_threshold: 0.45
+
+  max_detections: 20
+
+  threads:
+    rpi: 4
+    windows: 4
+
+hud:
+
+  enabled: true
+
+  colors:
+    neon_cyan: [255, 243, 0]
+    electric_purple: [175, 42, 183]
+    hud_bg: [15, 10, 25]
+    hud_bg_alpha: 220
+    text_primary: [255, 255, 255]
+    text_secondary: [180, 180, 180]
+    warning: [0, 128, 255]
+    danger: [0, 0, 255]
+
+  glow:
+    enabled: true
+    layers: 3
+    outer_thickness: 8
+    middle_thickness: 4
+    inner_thickness: 2
+    outer_alpha: 0.15
+    middle_alpha: 0.40
+    inner_alpha: 1.0
+
+  scanlines:
+    enabled: true
+    opacity: 0.08
+    spacing: 4
+
+  animations:
+    enabled: true
+    slide_duration_ms: 150
+    fade_duration_ms: 100
+
+  font:
+    primary: "orbitron"
+    scale: 0.6
+    thickness: 1
+    outline_thickness: 2
+
+performance:
+
+  min_fps: 18
+  max_fps: 22
+
+  gc_interval_frames: 100
+
+  preallocate_buffers: true
+  buffer_dtype: "uint8"
+
+  thermal:
+    enabled: true
+    throttle_temp_c: 70
+    critical_temp_c: 80
+    check_interval_frames: 50
+
+  max_cpu_percent: 85
+
+  adaptive_frameskip: true
+
+display:
+
+  title: "VEDARA AR System"
+
+  fullscreen: false
+
+  output_width: 640
+  output_height: 480
+
+  show_fps: true
+  show_cpu: true
+  show_memory: true
+  show_temp: true
+
+audio:
+  enabled: false
+  voice_cues: false
+  detection_sound: false
+
+logging:
+  level: "INFO"
+  file_enabled: false
+  file_path: "logs/vedara.log"
+  console_enabled: true
+
+debug:
+
+  simulate_rpi: false
+  throttle_cpu_ghz: 1.5
+
+  save_frames: false
+  save_interval: 100
+  save_path: "debug/frames"
+
+  show_detection_time: true
+  show_render_time: true

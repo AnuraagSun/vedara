@@ -1,0 +1,38 @@
+# ==============================================================================
+# FILE: vedara/requirements.txt
+# PURPOSE: Cross-platform Python dependencies for Vedara AR System
+# COMPATIBILITY: Windows 11 (dev) + Raspberry Pi OS 64-bit (deploy)
+# PYTHON: 3.11+
+# ==============================================================================
+
+# Operator, these dependencies are validated for cross-platform deployment.
+# No CUDA. No heavy frameworks. Pure efficiency.
+
+# Core Computer Vision - Headless variant for RPi compatibility
+opencv-python-headless>=4.8.0
+
+# TensorFlow Lite Runtime - Lightweight inference engine
+# Note: tflite-runtime is installed separately per platform
+# Windows uses: pip install tflite-runtime
+# RPi uses: pip install tflite-runtime from piwheels
+
+tflite-runtime>=2.14.0
+
+# Numerical Computing - The backbone of our shader system
+numpy>=1.24.0,<2.0.0
+
+# Configuration Management
+PyYAML>=6.0
+
+# Image Processing Utilities
+Pillow>=10.0.0
+
+# Performance Monitoring
+psutil>=5.9.0
+
+# Optional: Audio feedback system
+# pyaudio>=0.2.13
+
+# ==============================================================================
+# END OF FILE: vedara/requirements.txt
+# ============================================================================== 
